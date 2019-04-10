@@ -12,7 +12,11 @@
     <q-btn @click="showNotif" color="black" label="Black" />
 
 
-       <q-input outlined v-model="text" label="Outlined" />
+      <q-input color="teal" filled v-model="text" label="Label">
+        <template v-slot:prepend>
+          <q-icon name="event" />
+        </template>
+      </q-input>
   </div>
     <router-link to="/customer">Customer</router-link>
     <router-view></router-view>
