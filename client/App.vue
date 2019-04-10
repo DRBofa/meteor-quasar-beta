@@ -1,43 +1,82 @@
 <template>
-  <div>
+<div>
     <router-link to="/item">item</router-link>
-     <div class="q-pa-md q-gutter-sm">
-    <q-btn @click="showNotif" color="white" text-color="black" label="Standard" />
-    <q-btn @click="showNotif" color="primary" label="Primary" />
-    <q-btn @click="showNotif" color="secondary" label="Secondary" />
-    <q-btn @click="showNotif" color="amber" glossy label="Amber" />
-    <q-btn @click="showNotif" color="brown-5" label="Brown 5" />
-    <q-btn @click="showNotif" color="deep-orange" glossy label="Deep Orange" />
-    <q-btn @click="showNotif" color="purple" label="Purple" />
-    <q-btn @click="showNotif" color="black" label="Black" />
-
-
-      <q-input color="teal" filled v-model="text" label="Label">
-        <template v-slot:prepend>
-          <q-icon name="event" />
-        </template>
-      </q-input>
-  </div>
+    <div class="q-pa-md q-gutter-sm">
+        <q-btn
+            @click="showNotif"
+            color="white"
+            text-color="black"
+            label="Standard" />
+        <q-btn
+            @click="showNotif"
+            color="primary"
+            label="Primary" />
+        <q-btn
+            @click="showNotif"
+            color="secondary"
+            label="Secondary" />
+        <q-btn
+            @click="showNotif"
+            color="amber"
+            glossy
+            label="Amber" />
+        <q-btn
+            @click="showNotif"
+            color="brown-5"
+            label="Brown 5" />
+        <q-btn
+            @click="showNotif"
+            color="deep-orange"
+            glossy
+            label="Deep Orange" />
+        <q-btn
+            @click="showNotif"
+            color="purple"
+            label="Purple" />
+        <q-btn
+            @click="showNotif"
+            color="black"
+            label="Black" />
+        <q-input
+            color="teal"
+            filled
+            v-model="text"
+            label="Label">
+            <template v-slot:prepend>
+                <q-icon name="event" />
+            </template>
+        </q-input>
+    </div>
     <router-link to="/customer">Customer</router-link>
     <router-view></router-view>
-  </div>
+</div>
 </template>
 
-
 <script>
+import {
+    Quasar,
+    QInput,
+     QBtn,
+} from 'quasar'
+
 export default {
-  data(){
-    return{
-      text:'Hello'
+    components: {
+        QInput,
+         QBtn,
+        
+    },
+    data() {
+        return {
+            text: 'Hello'
+        }
+    },
+    methods: {
+        showNotif() {
+            this.$q.notify({
+                message: 'John pinged you',
+                color: 'purple'
+            })
+        }
     }
-  },
-  methods:{
-    showNotif () {
-      this.$q.notify({
-        message: 'John pinged you',
-        color: 'purple'
-      })
-    }
-  }
 }
 </script>

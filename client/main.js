@@ -10,10 +10,10 @@ const router = new VueRouter({
   routes // short for `routes: routes`
 })
 
-import Quasar from 'quasar'
+// import Quasar from 'quasar'
 import '@quasar/extras/material-icons/material-icons.css';
 import 'quasar/dist/quasar.min.css';
-Vue.use(Quasar)
+// Vue.use(Quasar)
 
 
 
